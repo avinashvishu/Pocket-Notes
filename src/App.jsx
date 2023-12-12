@@ -1,6 +1,6 @@
 
 import './App.css'
-import DmainPg from './Page/Desktop-view/DmainPg'
+import DmainPg from './Page/Main-page/DmainPg'
 
 function App() {
     

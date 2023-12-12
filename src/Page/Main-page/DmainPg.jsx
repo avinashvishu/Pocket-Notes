@@ -1,11 +1,23 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import styles from './Dpg.module.css'
 import { MdLock } from "react-icons/md";
 import bgImg from '../../assets/mainPgImg.png'
 
 const DmainPg = () => {
-   const [popUp,setpopUp]=useState(false)
+   const [popUp,setpopUp]=useState(false);
+   let menuRef=useRef();
+   useEffect(()=>{
+   const handleouterClick=(e)=>{    
+    if(menuRef.current==e.target){
+     setpopUp(false)
+    } 
+   
+   }
+    addEventListener("mousedown",handleouterClick)
+     return ()=>{removeEventListener("mousedown",handleouterClick)}
+  
 
+   })
   return (
     <>
     <div className={styles.container} >
@@ -56,8 +68,8 @@ Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p></div>
 
           </div>
     </div>
-   {popUp?<div className={styles.popUp} onClick={()=>{setpopUp(false)}}  >
-                        <div className={styles.createTab} >
+   {popUp?<div className={styles.popUp} ref={menuRef}>
+                        <div className={styles.createTab}  >
 
                         </div>
       
