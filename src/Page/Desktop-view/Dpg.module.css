@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  overflow: hidden;
+}
 .container {
   width: 100vw;
   height: 100vh;
@@ -8,32 +11,143 @@
 }
 
 .left {
-  background-color: red;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .leftHead {
-  padding: 50px;
-  background-color: gray;
+  padding: 50px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .leftHead h1 {
+  font-size: 3.2rem;
   font-family: "Roboto", sans-serif;
 }
 .leftBody {
   flex-grow: 1;
-  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: start;
   overflow-y: scroll;
-  /* overflow-x: hidden; */
+  overflow: auto;
+  font-family: "Roboto", sans-serif;
 }
 
+.leftBody::-webkit-scrollbar {
+  width: 1rem;
+  padding: 0.2rem;
+}
+.leftBody::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 1rem;
+}
+.leftBody::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #d9d9d9;
+}
+.leftBody::-webkit-scrollbar-thumb:hover {
+  background-color: #f5f5f5;
+}
+.notesSec {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+.notesSec:hover {
+  background-color: #2f2f2f1a;
+}
+.NotesName {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+.NotesDp {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+.NotesDp h1 {
+  color: #ffffff;
+  font-weight: bold;
+}
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  width: 7rem;
+  background-color: #16008b;
+  position: absolute;
+  border-radius: 50%;
+  font-family: "Roboto", sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  bottom: 1rem;
+  right: 2rem;
+}
 .right {
-  background-color: blue;
+  background-color: #dae5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightBody {
+  flex-grow: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.rightBody img {
+  width: 60rem;
+  height: 30rem;
+}
+
+.rightBody h1 {
+  font-size: 4.4rem;
+  font-family: "Roboto", sans-serif;
+}
+.rightBody p {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  max-width: 60rem;
+}
+.rightFooter {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.rightFooter h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #292929;
+}
+
+.popUp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff8c;
+  backdrop-filter: blur(5px);
 }

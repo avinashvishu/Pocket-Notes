@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './Dpg.module.css'
+import { MdLock } from "react-icons/md";
+import bgImg from '../../assets/mainPgImg.png'
 
 const DmainPg = () => {
   return (
@@ -11,72 +13,50 @@ const DmainPg = () => {
                 </div>
                 <div className={styles.leftBody}>
                   
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+<div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                  
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
+                    <div className={styles.notesSec} ><div className={styles.NotesDp} ><h1>NM</h1></div><h3 className={styles.NotesName}>Note 1 </h3>
 </div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
-</div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
-</div>
-                    <div style={{display:"flex" ,justifyContent:"start",alignItems:"center",gap:"20px",backgroundColor:"orange",padding:"20px"}} ><svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34.4503" cy="34.4503" r="34.4503" fill="#B38BFA"/>
-</svg><h3>Note1 </h3>
-</div>
-                    
                     
                 </div>
+             <div className={styles.addBtn}>+</div>
+          </div>
+          <div className={styles.right} >
+                  <div className={styles.rightBody} ><img src={bgImg} alt="background image of working peoples" /><h1>Pocket Notes</h1><p>Send and receive messages without keeping your phone online.<br/>
+Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p></div>
+                  <div className={styles.rightFooter} ><MdLock size={"2rem"}/><h2>end-to-end encrypted</h2></div>
 
           </div>
-          <div className={styles.right} ></div>
+    </div>
+    <div className={styles.popUp}>
+                        
+      
     </div>
     </>
   )
