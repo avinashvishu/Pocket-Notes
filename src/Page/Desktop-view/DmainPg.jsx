@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styles from './Dpg.module.css'
 import { MdLock } from "react-icons/md";
 import bgImg from '../../assets/mainPgImg.png'
 
 const DmainPg = () => {
+   const [popUp,setpopUp]=useState(false)
+
   return (
     <>
     <div className={styles.container} >
@@ -45,7 +47,7 @@ const DmainPg = () => {
 </div>
                     
                 </div>
-             <div className={styles.addBtn}>+</div>
+             <div className={styles.addBtn} onClick={()=>{setpopUp(true)}} >+</div>
           </div>
           <div className={styles.right} >
                   <div className={styles.rightBody} ><img src={bgImg} alt="background image of working peoples" /><h1>Pocket Notes</h1><p>Send and receive messages without keeping your phone online.<br/>
@@ -54,10 +56,12 @@ Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p></div>
 
           </div>
     </div>
-    <div className={styles.popUp}>
-                        
+   {popUp?<div className={styles.popUp} onClick={()=>{setpopUp(false)}}  >
+                        <div className={styles.createTab} >
+
+                        </div>
       
-    </div>
+    </div>:<></>} 
     </>
   )
 }
