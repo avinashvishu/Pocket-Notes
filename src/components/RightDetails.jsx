@@ -3,10 +3,15 @@ import { useState } from 'react'
 import styles from './RightDetails.module.css'
 import { nanoid } from 'nanoid';
 const RightDetails = ({rightDetails}) => {
+   
     let key = Object.keys(rightDetails);
-    const [details]=useState(rightDetails[key].details)
+    let data=rightDetails[key].details
+    console.log(data,'is data')
+  
+   
+
+
     function toShort (key){
-        
         if(Object.keys(key).length==1){
              let letter = key[0];    
              let capWord =letter.charAt(letter.slice(0,1)).toUpperCase();  
@@ -22,7 +27,8 @@ const RightDetails = ({rightDetails}) => {
     
        let shortForm = toShort(key[0].split(" "));
     //   console.log(rightDetails[key].details[0].date)
-      console.log(details)
+      console.log(rightDetails,'from right')
+
 
   return (
     <div className={styles.container} >
@@ -33,7 +39,7 @@ const RightDetails = ({rightDetails}) => {
                 <h3 className={styles.NotesName}>{key}</h3>
                 </div>
             <div className={styles.noteArea} >
-                {details.map((data)=>{
+                {data.map((data)=>{
                     return(<div key={nanoid()} className={styles.notesText}>
                                {data.text}
                         </div>)

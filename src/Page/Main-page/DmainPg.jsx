@@ -37,7 +37,7 @@ const DmainPg = () => {
   ])
    
   
-  
+  useEffect(()=>{},[rightDetails])
 
 
   let selected= notes.filter((note)=>{return Object.keys(note)=='kj k j'})

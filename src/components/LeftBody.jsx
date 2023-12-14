@@ -19,6 +19,7 @@ export default function LeftBody({notes,setRightDetails}){
         
     }
     function showRight(e,note){
+      console.log(note,"from left")
         setRightDetails(note)
        
         

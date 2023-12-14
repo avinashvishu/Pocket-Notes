@@ -44,7 +44,7 @@
 
 .TextArea {
   background-color: #001f8b;
-  height: 14rem;
+  min-height: 14rem;
 }
 
 .NotesDp {
