@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid'
 import styles from './leftBody.module.css'
 
 
-export default function LeftBody({notes}){
+export default function LeftBody({notes,setRightDetails}){
 
     function toShort (key){
   
@@ -18,18 +18,21 @@ export default function LeftBody({notes}){
         }
         
     }
-    function showRight(e){
-         console.log(e.target.id)
-        //  console.log(e.target.div[0].getAttribute('key'))
+    function showRight(e,note){
+        setRightDetails(note)
+       
+        
     }
 
     return(
       <div className={styles.leftBody}>
 
         {notes?notes.map((note)=>{ 
+         
             let key = Object.keys(note);
+           
             let shortForm = toShort(key[0].split(" "));
-            return (  <div key={nanoid()} id={Object.keys(note)}  className={styles.notesSec} onClick={(e)=>{showRight(e)}} >
+            return (  <div key={nanoid()} id={Object.keys(note)}  className={styles.notesSec} onClick={(e)=>{showRight(e,note)}} >
                 <div style={{backgroundColor:note[key].color}} className={styles.NotesDp}>
                   <h1>{shortForm}</h1>
                 </div>

@@ -1,0 +1,77 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+}
+.nav {
+  background-color: #001f8b;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+.noteArea {
+  background-color: #dae5f5;
+  flex-grow: 1;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow: auto;
+}
+
+.noteArea::-webkit-scrollbar {
+  width: 1rem;
+  padding: 0.2rem;
+}
+.noteArea::-webkit-scrollbar-track {
+  background: #0000006d;
+  border-radius: 1rem;
+}
+.noteArea::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #d9d9d9;
+}
+.noteArea::-webkit-scrollbar-thumb:hover {
+  background-color: #f5f5f5;
+}
+
+.TextArea {
+  background-color: #001f8b;
+  height: 14rem;
+}
+
+.NotesDp {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff79f2;
+}
+.NotesDp h1 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.NotesName {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+.notesText {
+  margin: 2rem 0;
+  width: 95%;
+  height: max-content;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px 0px #00000040;
+}

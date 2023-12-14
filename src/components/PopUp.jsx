@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './popUp.module.css'
-import { nanoid } from 'nanoid'
-import { useEffect } from 'react'
+
 
 function PopUp({menuRef,notes,setNotes,setpopUp }) {
         const [error,setError]=useState(false)
@@ -14,9 +13,9 @@ function PopUp({menuRef,notes,setNotes,setpopUp }) {
      
         function  createFnc(text){
             let a = notes.filter((note)=>{return Object.keys(note)==text}).length
-            if(a==0){console.log("don't has same name")
-            console.log(a,"is there")
+            if(a==0){
             if(text.trim(" ")&&color){console.log("text is true")
+            let id=notes.length
              let l = {text:{color:color,details:[]}}
              l[text] = l['text'];
              delete l['text'];
@@ -30,11 +29,9 @@ function PopUp({menuRef,notes,setNotes,setpopUp }) {
         else
         {
             setError(true)
-            console.log("has same name")}
-    
         }
     
-    
+        }
   return (
     <div className={styles.popUp} ref={menuRef}>
           <div className={styles.createTab}>
@@ -62,5 +59,6 @@ function PopUp({menuRef,notes,setNotes,setpopUp }) {
         </div>
   )
 }
+
 
 export default PopUp
