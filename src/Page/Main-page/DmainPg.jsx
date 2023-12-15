@@ -13,9 +13,7 @@ const DmainPg = () => {
   const [selectedKey,setKey]=useState()
   
 
-  let newdata=JSON.parse(localStorage.getItem('Notes'))
-  console.log(newdata[2],'newData')
-  
+
   // let sel=newdata.filter((note)=>{return Object.keys(note)=='Aviansh Vishu'})
   // let id=Object.keys(sel[0])
   // selected[0][id].details.push({text:"Hello its avinash vishu",date:"01 sept 1998",time:"5:30pm"})
