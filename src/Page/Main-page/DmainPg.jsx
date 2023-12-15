@@ -9,41 +9,30 @@ import RightDetails from "../../components/RightDetails";
 const DmainPg = () => {
   const [popUp, setpopUp] = useState(false);
   const [rightDetails,setRightDetails]=useState()
-  const [notes,setNotes]= useState([
-    {
-      'sd f': {
-        color: "#FF79F2",
-        details: [{text:"some dammy text",date:"01 sept 1998",time:"5:30pm"},{text:"some dammy text",date:"01 sept 1998",time:"5:30pm"},{text:"some dammy text",date:"01 sept 1998",time:"5:30pm"},{text:"some dammy text",date:"01 sept 1998",time:"5:30pm"},{text:"some dammy text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro earum dolorem quidem esse harum suscipit provident dignissimos a nulla impedit? Totam atque dolores quod similique ex in ipsum natus, aut eligendi voluptatibus laudantium, veniam commodi, ad assumenda exercitationem excepturi ullam. Similique, rem iure. Iste, cumque.",date:"01 sept 1998",time:"5:30pm"},{text:"some dammy text",date:"01 sept 1998",time:"5:30pm"}]
-      }
-    },
-    {
-      'kj k j' : {
-        color: "#6691FF",
-        details: []
-      }
-    },
-    {
-      'j kh gh': {
-        color: "#B38BFA",
-        details: []
-      }
-    },
-    {
-      'klj lkj': {
-        color: "#B38BFA",
-        details: []
-      }
-    }
-  ])
-   
+  const [notes,setNotes]= useState(localStorage.getItem('Notes')?JSON.parse(localStorage.getItem('Notes')):[])
+  const [selectedKey,setKey]=useState()
   
-  useEffect(()=>{},[rightDetails])
+
+  let newdata=JSON.parse(localStorage.getItem('Notes'))
+  console.log(newdata[2],'newData')
+  
+  // let sel=newdata.filter((note)=>{return Object.keys(note)=='Aviansh Vishu'})
+  // let id=Object.keys(sel[0])
+  // selected[0][id].details.push({text:"Hello its avinash vishu",date:"01 sept 1998",time:"5:30pm"})
 
 
-  let selected= notes.filter((note)=>{return Object.keys(note)=='kj k j'})
-  let id=Object.keys(selected[0])
-  selected[0][id].details.push({text:"Some dummy text"})
-  selected[0][id].details.push({text:"Another dummy text"})
+//  useEffect(()=>{
+//   let value = [...notes]
+//   console.log(value,"from value")
+//   // localStorage.setItem('Notes',JSON.stringify(value))
+//  },[])
+
+// {text:"some dammy text",date:"01 sept 1998",time:"5:30pm"}
+
+  // let selected= notes.filter((note)=>{return Object.keys(note)=='kj k j'})
+  // let id=Object.keys(selected[0])
+  // selected[0][id].details.push({text:"Some dummy text"})
+  // selected[0][id].details.push({text:"Another dummy text"})
   // console.log(selected[0][id].details)
   let menuRef = useRef();
   useEffect(() => {
@@ -64,7 +53,7 @@ const DmainPg = () => {
           <div className={styles.leftHead}>
             <h1>Pockect Notes</h1>
           </div>
-          <LeftBody notes={notes} setRightDetails={setRightDetails} />
+          <LeftBody notes={notes} setRightDetails={setRightDetails} setKey={setKey} />
           <div
             className={styles.addBtn}
             onClick={() => {
@@ -74,7 +63,7 @@ const DmainPg = () => {
           </div>
         </div>
         {/* <Right/> */}
-        {rightDetails?<RightDetails rightDetails={rightDetails} />:null}
+        {rightDetails?<RightDetails rightDetails={rightDetails} selectedKey={selectedKey} />:<Right/>}
       </div>
       {popUp ? (
         <PopUp menuRef={menuRef} notes={notes} setNotes={setNotes}  setpopUp={setpopUp} />

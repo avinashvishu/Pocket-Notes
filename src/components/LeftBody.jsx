@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid'
 import styles from './leftBody.module.css'
 
 
-export default function LeftBody({notes,setRightDetails}){
+export default function LeftBody({notes,setRightDetails,setKey}){
 
     function toShort (key){
   
@@ -19,7 +19,7 @@ export default function LeftBody({notes,setRightDetails}){
         
     }
     function showRight(e,note){
-      console.log(note,"from left")
+      setKey(e.target.id)
         setRightDetails(note)
        
         

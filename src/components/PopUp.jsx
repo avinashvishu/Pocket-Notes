@@ -22,6 +22,7 @@ function PopUp({menuRef,notes,setNotes,setpopUp }) {
              console.log(l,'from function')
             let newNote=[...notes]
             newNote.push(l)
+            localStorage.setItem('Notes',JSON.stringify(newNote))
             setNotes(newNote)
             setpopUp(false)
             setError(false)

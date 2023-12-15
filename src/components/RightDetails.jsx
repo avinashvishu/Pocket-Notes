@@ -2,15 +2,31 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import styles from './RightDetails.module.css'
 import { nanoid } from 'nanoid';
-const RightDetails = ({rightDetails}) => {
-   
+import { IoSendSharp } from "react-icons/io5";
+const RightDetails = ({rightDetails,selectedKey}) => {
+    const [innerText,setText]=useState('')
     let key = Object.keys(rightDetails);
     let data=rightDetails[key].details
     console.log(data,'is data')
   
-   
+   function checktext(e){
+       setText(e.target.value)
+   }
 
+   function AddText(){
+       let addText=JSON.parse(localStorage.getItem('Notes'));
+        console.log(addText)
+      addText.map((data)=>{console.log(Object.keys(data).map((key)=>{
+        if(key==selectedKey){ 
+          data[key].details.push({text:innerText,date:"01 sept 1998",time:"5:30pm"})
+          console.log(addText)
+          localStorage.setItem('Notes',JSON.stringify(addText))
+        }
+      })) })
+     
+   }
 
+   useEffect(()=>{console.log(innerText) })
     function toShort (key){
         if(Object.keys(key).length==1){
              let letter = key[0];    
@@ -46,7 +62,11 @@ const RightDetails = ({rightDetails}) => {
                 })}
                 
             </div>
-            <div className={styles.TextArea} ></div>
+            <div className={styles.TextArea} >
+              <textarea name="UserNotes" id="TextNotes" value={innerText} placeholder='Enter your text here...........'  onChange={checktext}  rows="8"></textarea>
+             
+            </div> 
+           {innerText.trim(" ").length==0? <IoSendSharp size={"2rem"} className={styles.SendBtn} fill="#ABABAB"  />:<IoSendSharp size={"2rem"} className={styles.SendBtn} fill="#001F8B" onClick={AddText} />}
     </div>
   )
 }

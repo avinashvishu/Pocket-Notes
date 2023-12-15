@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -68,10 +69,32 @@
 }
 
 .notesText {
+  font-size: 1.4rem;
+  font-weight: normal;
   margin: 2rem 0;
   width: 95%;
   height: max-content;
   padding: 2rem;
   background-color: #ffffff;
   box-shadow: 0px 4px 20px 0px #00000040;
+}
+.TextArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.TextArea textarea {
+  outline: #cccccc;
+  border: 1px solid #cccccc;
+  border-radius: 1rem;
+  resize: none;
+  padding: 1rem;
+  width: 100%;
+}
+.SendBtn {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
 }
