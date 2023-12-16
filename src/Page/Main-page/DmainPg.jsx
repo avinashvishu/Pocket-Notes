@@ -61,7 +61,7 @@ const DmainPg = () => {
           </div>
         </div>
         {/* <Right/> */}
-        {rightDetails?<RightDetails rightDetails={rightDetails} selectedKey={selectedKey} />:<Right/>}
+        {rightDetails?<RightDetails rightDetails={rightDetails} selectedKey={selectedKey} setRightDetails={setRightDetails} />:<Right/>}
       </div>
       {popUp ? (
         <PopUp menuRef={menuRef} notes={notes} setNotes={setNotes}  setpopUp={setpopUp} />

@@ -3,11 +3,11 @@ import { useState } from 'react'
 import styles from './RightDetails.module.css'
 import { nanoid } from 'nanoid';
 import { IoSendSharp } from "react-icons/io5";
-const RightDetails = ({rightDetails,selectedKey}) => {
+const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
     const [innerText,setText]=useState('')
     let key = Object.keys(rightDetails);
     let data=rightDetails[key].details
-    console.log(data,'is data')
+    console.log(rightDetails[Object.keys(rightDetails)].details,'is right detials')
   
    function checktext(e){
        setText(e.target.value)
@@ -19,6 +19,10 @@ const RightDetails = ({rightDetails,selectedKey}) => {
       addText.map((data)=>{console.log(Object.keys(data).map((key)=>{
         if(key==selectedKey){ 
           data[key].details.push({text:innerText,date:"01 sept 1998",time:"5:30pm"})
+           rightDetails[Object.keys(rightDetails)].details.push({text:innerText,date:"01 sept 1998",time:"5:30pm"})
+           let newRight={...rightDetails}
+          console.log(newRight,'new right details after check')
+          setRightDetails(newRight)
           console.log(addText)
           localStorage.setItem('Notes',JSON.stringify(addText))
         }
@@ -55,7 +59,7 @@ const RightDetails = ({rightDetails,selectedKey}) => {
                 <h3 className={styles.NotesName}>{key}</h3>
                 </div>
             <div className={styles.noteArea} >
-                {data.map((data)=>{
+                {rightDetails[Object.keys(rightDetails)].details.map((data)=>{
                     return(<div key={nanoid()} className={styles.notesText}>
                                {data.text}
                         </div>)
