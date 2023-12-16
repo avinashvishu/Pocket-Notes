@@ -18,13 +18,17 @@ const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
         console.log(addText)
       addText.map((data)=>{console.log(Object.keys(data).map((key)=>{
         if(key==selectedKey){ 
-          data[key].details.push({text:innerText,date:"01 sept 1998",time:"5:30pm"})
-           rightDetails[Object.keys(rightDetails)].details.push({text:innerText,date:"01 sept 1998",time:"5:30pm"})
+          let month = new Date().toLocaleDateString('en-us', {month:"long"});
+          let date = new Date().toLocaleDateString('en-us', { day:"numeric"});
+          let year = new Date()
+          data[key].details.push({text:innerText,date:`${date} ${month.slice(0,3)} ${year.getFullYear()}`,time:`${year.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`})
+           rightDetails[Object.keys(rightDetails)].details.push({text:innerText,date:`${date} ${month.slice(0,3)} ${year.getFullYear()}`,time:`${year.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`})
            let newRight={...rightDetails}
           console.log(newRight,'new right details after check')
           setRightDetails(newRight)
           console.log(addText)
           localStorage.setItem('Notes',JSON.stringify(addText))
+          setText('')
         }
       })) })
      
@@ -60,8 +64,12 @@ const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
                 </div>
             <div className={styles.noteArea} >
                 {rightDetails[Object.keys(rightDetails)].details.map((data)=>{
-                    return(<div key={nanoid()} className={styles.notesText}>
-                               {data.text}
+                    return(<div key={nanoid()} className={styles.notesContainer}>
+                              <div className={styles.notesText}>{data.text}</div>
+                              <div className={styles.notesDateTime}>{data.date}<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="4" cy="4" r="4" fill="#353535"/>
+</svg>
+{data.time}</div> 
                         </div>)
                 })}
                 

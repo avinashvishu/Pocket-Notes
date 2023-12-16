@@ -13,7 +13,7 @@ const DmainPg = () => {
   const [selectedKey,setKey]=useState()
   
 
-
+ console.log(selectedKey,"Is key")
   // let sel=newdata.filter((note)=>{return Object.keys(note)=='Aviansh Vishu'})
   // let id=Object.keys(sel[0])
   // selected[0][id].details.push({text:"Hello its avinash vishu",date:"01 sept 1998",time:"5:30pm"})
@@ -51,7 +51,7 @@ const DmainPg = () => {
           <div className={styles.leftHead}>
             <h1>Pockect Notes</h1>
           </div>
-          <LeftBody notes={notes} setRightDetails={setRightDetails} setKey={setKey} />
+          <LeftBody notes={notes} selectedKey={selectedKey} setRightDetails={setRightDetails} setKey={setKey} />
           <div
             className={styles.addBtn}
             onClick={() => {

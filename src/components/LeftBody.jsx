@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid'
 import styles from './leftBody.module.css'
+import { useState } from 'react';
 
-
-export default function LeftBody({notes,setRightDetails,setKey}){
-
+export default function LeftBody({notes,setRightDetails,setKey,selectedKey}){
+   
     function toShort (key){
   
        if(Object.keys(key).length==1){
@@ -19,7 +19,9 @@ export default function LeftBody({notes,setRightDetails,setKey}){
         
     }
     function showRight(e,note){
-      setKey(e.target.id)
+  
+     
+      setKey(Object.keys(note)[0])
         setRightDetails(note)
        
         
@@ -33,7 +35,7 @@ export default function LeftBody({notes,setRightDetails,setKey}){
             let key = Object.keys(note);
            
             let shortForm = toShort(key[0].split(" "));
-            return (  <div key={nanoid()} id={Object.keys(note)}  className={styles.notesSec} onClick={(e)=>{showRight(e,note)}} >
+            return (  <div key={nanoid()} id={Object.keys(note)[0]} style={{backgroundColor:`${key[0]==selectedKey?'#2f2f2f1a':null}`}}   className={styles.notesSec} onClick={(e)=>{showRight(e,note)}} >
                 <div style={{backgroundColor:note[key].color}} className={styles.NotesDp}>
                   <h1>{shortForm}</h1>
                 </div>
