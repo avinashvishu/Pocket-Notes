@@ -1,11 +1,21 @@
 import { nanoid } from 'nanoid'
 import styles from './leftBody.module.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function LeftBody({notes,setRightDetails,setKey,selectedKey}){
-   
+export default function LeftBody({notes,setRightDetails,setKey,selectedKey,setMobile,setMobileToggle}){
+  const [innerSize,setSize]=useState()
+  useEffect(()=>{
+   const handleResize=()=>{
+      setSize(window.innerWidth)
+    }
+    addEventListener('resize',handleResize)
+    handleResize();
+    return removeEventListener('resize',handleResize);
+  },[])
+
+
+
     function toShort (key){
-  
        if(Object.keys(key).length==1){
             let letter = key[0];    
             let capWord =letter.charAt(letter.slice(0,1)).toUpperCase();  
@@ -19,12 +29,13 @@ export default function LeftBody({notes,setRightDetails,setKey,selectedKey}){
         
     }
     function showRight(e,note){
-  
-     
       setKey(Object.keys(note)[0])
-        setRightDetails(note)
-       
-        
+      setRightDetails(note)
+      if(innerSize<=500){
+        setMobile(true)
+        setMobileToggle(false)
+      }
+
     }
 
     return(

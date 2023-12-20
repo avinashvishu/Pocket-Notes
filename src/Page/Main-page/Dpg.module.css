@@ -101,3 +101,38 @@ body {
   font-weight: normal;
   color: #292929;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1.5fr 4fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 90px;
+  }
+  .container {
+    display: block;
+  }
+  .left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+  }
+
+  .addBtn {
+    font-size: 6rem;
+    height: 9rem;
+    width: 9rem;
+    bottom: 6rem;
+    right: 4rem;
+  }
+}

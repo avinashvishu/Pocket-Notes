@@ -11,27 +11,10 @@ const DmainPg = () => {
   const [rightDetails,setRightDetails]=useState()
   const [notes,setNotes]= useState(localStorage.getItem('Notes')?JSON.parse(localStorage.getItem('Notes')):[])
   const [selectedKey,setKey]=useState()
-  
+  const [isMobile,setMobile]=useState(false)
+  const [mobileToggle,setMobileToggle]=useState(false)
 
- console.log(selectedKey,"Is key")
-  // let sel=newdata.filter((note)=>{return Object.keys(note)=='Aviansh Vishu'})
-  // let id=Object.keys(sel[0])
-  // selected[0][id].details.push({text:"Hello its avinash vishu",date:"01 sept 1998",time:"5:30pm"})
-
-
-//  useEffect(()=>{
-//   let value = [...notes]
-//   console.log(value,"from value")
-//   // localStorage.setItem('Notes',JSON.stringify(value))
-//  },[])
-
-// {text:"some dammy text",date:"01 sept 1998",time:"5:30pm"}
-
-  // let selected= notes.filter((note)=>{return Object.keys(note)=='kj k j'})
-  // let id=Object.keys(selected[0])
-  // selected[0][id].details.push({text:"Some dummy text"})
-  // selected[0][id].details.push({text:"Another dummy text"})
-  // console.log(selected[0][id].details)
+ 
   let menuRef = useRef();
   useEffect(() => {
     const handleouterClick = (e) => {
@@ -51,7 +34,7 @@ const DmainPg = () => {
           <div className={styles.leftHead}>
             <h1>Pockect Notes</h1>
           </div>
-          <LeftBody notes={notes} selectedKey={selectedKey} setRightDetails={setRightDetails} setKey={setKey} />
+          <LeftBody notes={notes} selectedKey={selectedKey} setRightDetails={setRightDetails} setKey={setKey} setMobile={setMobile} setMobileToggle={setMobileToggle} />
           <div
             className={styles.addBtn}
             onClick={() => {
@@ -60,8 +43,8 @@ const DmainPg = () => {
             +
           </div>
         </div>
-        {/* <Right/> */}
-        {rightDetails?<RightDetails rightDetails={rightDetails} selectedKey={selectedKey} setRightDetails={setRightDetails} />:<Right/>}
+     
+        {rightDetails?<RightDetails rightDetails={rightDetails} selectedKey={selectedKey} setRightDetails={setRightDetails} isMobile={isMobile} mobileToggle={mobileToggle} setMobileToggle={setMobileToggle} />:!isMobile?<Right/>:null}
       </div>
       {popUp ? (
         <PopUp menuRef={menuRef} notes={notes} setNotes={setNotes}  setpopUp={setpopUp} />

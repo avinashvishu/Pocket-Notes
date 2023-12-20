@@ -82,6 +82,10 @@
 }
 
 .notesText {
+  background-color: red;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  width: 100%;
   flex-grow: 2;
 }
 .notesDateTime {
@@ -114,4 +118,17 @@
   bottom: 4rem;
   right: 4rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+  .notesContainer {
+    width: 80%;
+  }
 }

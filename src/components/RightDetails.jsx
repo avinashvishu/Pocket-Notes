@@ -3,7 +3,8 @@ import { useState } from 'react'
 import styles from './RightDetails.module.css'
 import { nanoid } from 'nanoid';
 import { IoSendSharp } from "react-icons/io5";
-const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
+import { IoMdArrowRoundBack } from "react-icons/io";
+const RightDetails = ({rightDetails,selectedKey,setRightDetails,isMobile,mobileToggle,setMobileToggle}) => {
     const [innerText,setText]=useState('')
     let key = Object.keys(rightDetails);
     let data=rightDetails[key].details
@@ -55,8 +56,9 @@ const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
 
 
   return (
-    <div className={styles.container} >
+    <div className={styles.container} style={{display:`${!mobileToggle?"flex":"none"}`}} >
             <div className={styles.nav} >
+               {isMobile?<IoMdArrowRoundBack  size={"3rem"} style={{cursor:"pointer",fill:"#ffffff"}} onClick={()=>{setMobileToggle(true)}} />:null} 
                 <div style={{backgroundColor:rightDetails[key].color}} className={styles.NotesDp}>
                   <h1>{shortForm}</h1>
                 </div>
@@ -66,7 +68,7 @@ const RightDetails = ({rightDetails,selectedKey,setRightDetails}) => {
                 {rightDetails[Object.keys(rightDetails)].details.map((data)=>{
                     return(<div key={nanoid()} className={styles.notesContainer}>
                               <div className={styles.notesText}>{data.text}</div>
-                              <div className={styles.notesDateTime}>{data.date}<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <div className={styles.notesDateTime}>{data.date}<svg width="0.8rem" height="0.8rem" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="4" cy="4" r="4" fill="#353535"/>
 </svg>
 {data.time}</div> 
