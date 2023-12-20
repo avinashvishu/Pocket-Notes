@@ -82,7 +82,6 @@
 }
 
 .notesText {
-  background-color: red;
   text-wrap: balance;
   overflow-wrap: break-word;
   width: 100%;
